@@ -8,6 +8,13 @@
   </h3>
 </div>
 
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [Overview](#overview)
+- [How To Use](#how-to-use)
+
 <!-- OVERVIEW -->
 
 ## Overview
