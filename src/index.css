@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--dark-color: #141414;
+		--light-color: #f9fafe;
+		--sidebar-width: 16rem;
+	}
+	
+	@font-face {
+		font-family: "Mont";
+		src: url("~/assets/fonts/Mont-Regular.ttf");
+	}
+	
+	@font-face {
+		font-family: "Mont";
+		font-weight: 600;
+		src: url("~/assets/fonts/Mont-SemiBold.ttf");
+	}
+	
+	@font-face {
+		font-family: "Mont";
+		font-weight: 800;
+		src: url("~/assets/fonts/Mont-Bold.ttf");
+	}
+	
+	body {
+		background-color: var(--light-color);
+		color: #57585e;
+		min-height: 100vh;
+		font-family: "Mont", sans-serif;
+		font-size: theme("fontSize.sm")
+	}
+
+	body.dark {
+		background-color: var(--dark-color);
+	}
+
+	/* SCROLLBAR */
+	body::-webkit-scrollbar-thumb, .scrollbar::-webkit-scrollbar-thumb {
+		background-color: #bbbbc5;
+	}
+
+	body.dark::-webkit-scrollbar-thumb, body.dark .scrollbar::-webkit-scrollbar-thumb {
+		background-color: #57575a;
+	}
+	
+	body::-webkit-scrollbar, [class*=scrollbar]::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+	
+	body::-webkit-scrollbar-thumb, [class*=scrollbar]::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+	}
+	
+	.hover-scrollbar {
+		color: transparent;
+		transition: color .3s;
+	}
+	
+	.hover-scrollbar:hover {
+		color: #bbbbc5;
+	}
+
+	body.dark .hover-scrollbar:hover {
+		color: #57575a;
+	}
+	
+	.hover-scrollbar::-webkit-scrollbar-thumb {
+		color: inherit;
+		box-shadow: inset 0 0 2rem;
+	}
+}
+
+@layer utilities {
+	.main-container {
+		width: 100%;
+		max-width: 1600px;
+		padding: 1.25rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.divider::before {
+		content: "";
+		width: 60%;
+		height: 1px;
+		position: absolute;
+		bottom: 0;
+		@apply bg-[#bbbbc5]/[0.6];
+	}
+
+	body.dark .divider::before {
+		background-color: #929ba2;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main-container {
+		width: calc(100% - var(--sidebar-width));
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.main-container {
+		padding: 1.25rem 3rem 1.25rem 1.5rem;
+	}
+}
