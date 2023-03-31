@@ -27,7 +27,7 @@ const Sidebar = ({ className }: Props) => {
 	const classNames = clsx(
 		className,
 		"h-screen min-w-[var(--sidebar-width)] fixed top-0 left-0 z-50 flex flex-col justify-between pl-3 bg-[var(--light-color)] dark:bg-[var(--dark-color)] text-[#ebebf599] transition-transform md:sticky md:translate-x-0 md:transition-none",
-		isMenuOpen ? "-translate-x-full" : "translate-x-0"
+		isMenuOpen ? "translate-x-0" : "-translate-x-full"
 	);
 
 	return (
