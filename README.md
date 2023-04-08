@@ -1,4 +1,4 @@
-<h1 align="center">Games Dashboard</h1>
+<h1 align="center">Games Dashboard UI</h1>
 
 <div align="center">
   <h3>
